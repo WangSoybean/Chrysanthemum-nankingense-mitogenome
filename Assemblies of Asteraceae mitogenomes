@@ -1,0 +1,343 @@
+#Centrapalus pauciflorus
+spades.py -o spades1 --pe1-1 SRR2154068.sra_1.fastq.gz --pe1-2 SRR2154068.sra_2.fastq.gz -m 500 -t 20 -k 91
+cd spades1/
+mkdir blast
+cd blast
+blastn -query ../scaffolds.fasta -db ~/5.juhua.genome.project/05.organelle.blast.db/asterids.o.fas -outfmt 6 -out out
+cat out | grep CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>150 && $6<170){print }}' | cut -f 1 -d " " > reads.cp
+cat out | grep -v CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>2 && $6<5){print }}' | cut -f 1 -d " " > reads.mt
+cat ../scaffolds.fasta | awk 'BEGIN{while(getline < "reads.cp"){b[$1]=0};while(getline < "reads.mt"){c[$1]=0}}{if(/^>/){m=gsub(">","",$1);m=$1}else{a[m]=a[m]$1}}END{for(k in b){print ">"k"\n"a[k]> "cp.fa"};for(h in c){print ">"h"\n"a[h]> "mt.fa"}}'
+cp cp.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/Cepa_cp.fa
+cp mt.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/Cepa_mt.fa
+
+#Carthamus tinctorius
+spades.py -o spades1 --pe1-1 SRR3418174.sra_1.fastq.gz --pe1-2 SRR3418174.sra_2.fastq.gz -m 500 -t 20 -k 97
+cd spades1/
+mkdir blast
+cd blast
+blastn -query ../scaffolds.fasta -db ~/5.juhua.genome.project/05.organelle.blast.db/asterids.o.fas -outfmt 6 -out out
+cat out | grep CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>100 && $6<180){print }}' | cut -f 1 -d " " > reads.cp
+cat out | grep -v CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>5 && $6<11){print }}' | cut -f 1 -d " " > reads.mt
+cat ../scaffolds.fasta | awk 'BEGIN{while(getline < "reads.cp"){b[$1]=0};while(getline < "reads.mt"){c[$1]=0}}{if(/^>/){m=gsub(">","",$1);m=$1}else{a[m]=a[m]$1}}END{for(k in b){print ">"k"\n"a[k]> "cp.fa"};for(h in c){print ">"h"\n"a[h]> "mt.fa"}}'
+cp cp.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/Cati_cp.fa
+cp mt.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/Cati_mt.fa
+
+#Carthamus persicus
+spades.py -o spades1 --pe1-1 SRR3418275.sra_1.fastq.gz --pe1-2 SRR3418275.sra_2.fastq.gz -m 500 -t 20 -k 91
+cd spades1/
+mkdir blast
+cd blast
+blastn -query ../scaffolds.fasta -db ~/5.juhua.genome.project/05.organelle.blast.db/asterids.o.fas -outfmt 6 -out out
+cat out | grep CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>550 && $6<1100){print }}' | cut -f 1 -d " " > reads.cp
+cat out | grep -v CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>10 && $6<35){print }}' | cut -f 1 -d " " > reads.mt
+cat ../scaffolds.fasta | awk 'BEGIN{while(getline < "reads.cp"){b[$1]=0};while(getline < "reads.mt"){c[$1]=0}}{if(/^>/){m=gsub(">","",$1);m=$1}else{a[m]=a[m]$1}}END{for(k in b){print ">"k"\n"a[k]> "cp.fa"};for(h in c){print ">"h"\n"a[h]> "mt.fa"}}'
+cp cp.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/Cape_cp.fa
+cp mt.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/Cape_mt.fa
+
+#Gerbera hybrid cultivar
+spades.py -o spades1 --pe1-1 SRR2154064.sra_1.fastq.gz --pe1-2 SRR2154064.sra_2.fastq.gz -m 500 -t 20 -k 91
+cd spades1/
+mkdir blast
+cd blast
+blastn -query ../scaffolds.fasta -db ~/5.juhua.genome.project/05.organelle.blast.db/asterids.o.fas -outfmt 6 -out out
+cat out | grep CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>60 && $6<115){print }}' | cut -f 1 -d " " > reads.cp
+cat out | grep -v CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>2 && $6<4){print }}' | cut -f 1 -d " " > reads.mt
+cat ../scaffolds.fasta | awk 'BEGIN{while(getline < "reads.cp"){b[$1]=0};while(getline < "reads.mt"){c[$1]=0}}{if(/^>/){m=gsub(">","",$1);m=$1}else{a[m]=a[m]$1}}END{for(k in b){print ">"k"\n"a[k]> "cp.fa"};for(h in c){print ">"h"\n"a[h]> "mt.fa"}}'
+cp cp.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/GehyCUL_cp.fa
+cp mt.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/GehyCUL_mt.fa
+
+#Conoclinium coelestinum
+spades.py -o spades1 --pe1-1 SRR2155068.sra_1.fastq.gz --pe1-2 SRR2155068.sra_2.fastq.gz -m 500 -t 20 -k 91
+cd spades1/
+mkdir blast
+cd blast
+blastn -query ../scaffolds.fasta -db ~/5.juhua.genome.project/05.organelle.blast.db/asterids.o.fas -outfmt 6 -out out
+cat out | grep CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>50 && $6<65){print }}' | cut -f 1 -d " " > reads.cp
+cat out | grep -v CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>5 && $6<11){print }}' | cut -f 1 -d " " > reads.mt
+cat ../scaffolds.fasta | awk 'BEGIN{while(getline < "reads.cp"){b[$1]=0};while(getline < "reads.mt"){c[$1]=0}}{if(/^>/){m=gsub(">","",$1);m=$1}else{a[m]=a[m]$1}}END{for(k in b){print ">"k"\n"a[k]> "cp.fa"};for(h in c){print ">"h"\n"a[h]> "mt.fa"}}'
+cp cp.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/Coco_cp.fa
+cp mt.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/Coco_mt.fa
+
+#Nastanthus patagonicus
+spades.py -o spades1 --pe1-1 SRR2153911.sra_1.fastq.gz --pe1-2 SRR2153911.sra_2.fastq.gz -m 500 -t 20 -k 91
+mv spades1/scaffolds.fasta spades1/scaffolds.k91.fasta
+spades.py -o spades1 -m 500 -t 20 -k 93 --restart-from k93
+mv spades1/scaffolds.fasta spades1/scaffolds.k93.fasta
+cd spades1/
+mkdir blast
+cd blast
+blastn -query ../scaffolds.k91.fasta -db ~/5.juhua.genome.project/05.organelle.blast.db/asterids.o.fas -outfmt 6 -out out.k91
+blastn -query ../scaffolds.k93.fasta -db ~/5.juhua.genome.project/05.organelle.blast.db/asterids.o.fas -outfmt 6 -out out.k93
+cat out.k93 | grep CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>200 && $6<300){print }}' | cut -f 1 -d " " > reads.cp
+cat out.k91 | grep -v CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>4 && $6<8){print }}' | cut -f 1 -d " " > reads.mt
+cat ../scaffolds.k93.fasta | awk 'BEGIN{while(getline < "reads.cp"){b[$1]=0};while(getline < "reads.mt"){c[$1]=0}}{if(/^>/){m=gsub(">","",$1);m=$1}else{a[m]=a[m]$1}}END{for(k in b){print ">"k"\n"a[k]> "cp.fa"};for(h in c){}}'
+cat ../scaffolds.k91.fasta | awk 'BEGIN{while(getline < "reads.cp"){b[$1]=0};while(getline < "reads.mt"){c[$1]=0}}{if(/^>/){m=gsub(">","",$1);m=$1}else{a[m]=a[m]$1}}END{for(k in b){};for(h in c){print ">"h"\n"a[h]> "mt.fa"}}'
+cp cp.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/Napa_cp.fa
+cp mt.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/Napa_mt.fa
+
+#Senecio vulgaris
+spades.py -o spades1 --pe1-1 SRR2155042.sra_1.fastq.gz --pe1-2 SRR2155042.sra_2.fastq.gz -m 500 -t 20 -k 91
+cd spades1/
+mkdir blast
+cd blast
+blastn -query ../scaffolds.fasta -db ~/5.juhua.genome.project/05.organelle.blast.db/asterids.o.fas -outfmt 6 -out out
+cat out | grep CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>70 && $6<90){print }}' | cut -f 1 -d " " > reads.cp
+cat out | grep -v CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>6 && $6<15){print }}' | cut -f 1 -d " " > reads.mt
+cat ../scaffolds.fasta | awk 'BEGIN{while(getline < "reads.cp"){b[$1]=0};while(getline < "reads.mt"){c[$1]=0}}{if(/^>/){m=gsub(">","",$1);m=$1}else{a[m]=a[m]$1}}END{for(k in b){print ">"k"\n"a[k]> "cp.fa"};for(h in c){print ">"h"\n"a[h]> "mt.fa"}}'
+cp cp.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/Sevu_cp.fa
+cp mt.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/Sevu_mt.fa
+
+#Stevia rebaudiana
+spades.py -o spades1 --pe1-1 SRR6792730.sra_1.fastq.gz --pe1-2 SRR6792730.sra_2.fastq.gz -m 500 -t 20 -k 127
+cd spades1/
+mkdir blast
+cd blast
+blastn -query ../scaffolds.fasta -db ~/5.juhua.genome.project/05.organelle.blast.db/asterids.o.fas -outfmt 6 -out out
+cat out | grep CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>500 && $6<1400){print }}' | cut -f 1 -d " " > reads.cp
+cat out | grep -v CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>70 && $6<200){print }}' | cut -f 1 -d " " > reads.mt
+cat ../scaffolds.fasta | awk 'BEGIN{while(getline < "reads.cp"){b[$1]=0};while(getline < "reads.mt"){c[$1]=0}}{if(/^>/){m=gsub(">","",$1);m=$1}else{a[m]=a[m]$1}}END{for(k in b){print ">"k"\n"a[k]> "cp.fa"};for(h in c){print ">"h"\n"a[h]> "mt.fa"}}'
+cp cp.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/Stre_cp.fa
+cp mt.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/Stre_mt.fa
+
+#Melampodium linearilobum
+spades.py -o spades1 --pe1-1 SRR6715649.sra_1.fastq.gz --pe1-2 SRR6715649.sra_2.fastq.gz --pe2-1 SRR6715650.sra_1.fastq.gz --pe2-2 SRR6715650.sra_2.fastq.gz -m 500 -t 20 -k 127
+cd spades1/
+mkdir blast
+cd blast
+blastn -query ../scaffolds.fasta -db ~/5.juhua.genome.project/05.organelle.blast.db/asterids.o.fas -outfmt 6 -out out
+cat out | grep CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>50 && $6<110){print }}' | cut -f 1 -d " " > reads.cp
+cat out | grep -v CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>10 && $6<12){print }}' | cut -f 1 -d " " > reads.mt
+cat ../scaffolds.fasta | awk 'BEGIN{while(getline < "reads.cp"){b[$1]=0};while(getline < "reads.mt"){c[$1]=0}}{if(/^>/){m=gsub(">","",$1);m=$1}else{a[m]=a[m]$1}}END{for(k in b){print ">"k"\n"a[k]> "cp.fa"};for(h in c){print ">"h"\n"a[h]> "mt.fa"}}'
+cp cp.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/Meli_cp.fa
+cp mt.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/Meli_mt.fa
+
+#Melampodium americanum
+spades.py -o spades1 --pe1-1 SRR6715653.sra_1.fastq.gz --pe1-2 SRR6715653.sra_2.fastq.gz --pe2-1 SRR6715654.sra_1.fastq.gz --pe2-2 SRR6715654.sra_2.fastq.gz -m 500 -t 20 -k 127
+cd spades1/
+mkdir blast
+cd blast
+blastn -query ../scaffolds.fasta -db ~/5.juhua.genome.project/05.organelle.blast.db/asterids.o.fas -outfmt 6 -out out
+cat out | grep CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>45 && $6<100){print }}' | cut -f 1 -d " " > reads.cp
+cat out | grep -v CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>10 && $6<14){print }}' | cut -f 1 -d " " > reads.mt
+cat ../scaffolds.fasta | awk 'BEGIN{while(getline < "reads.cp"){b[$1]=0};while(getline < "reads.mt"){c[$1]=0}}{if(/^>/){m=gsub(">","",$1);m=$1}else{a[m]=a[m]$1}}END{for(k in b){print ">"k"\n"a[k]> "cp.fa"};for(h in c){print ">"h"\n"a[h]> "mt.fa"}}'
+cp cp.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/Meam_cp.fa
+cp mt.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/Meam_mt.fa
+
+#Melampodium glabribracteatum
+spades.py -o spades1 --pe1-1 SRR6715651.sra_1.fastq.gz --pe1-2 SRR6715651.sra_2.fastq.gz --pe2-1 SRR6715652.sra_1.fastq.gz --pe2-2 SRR6715652.sra_2.fastq.gz -m 500 -t 20 -k 127
+cd spades1/
+mkdir blast
+cd blast
+blastn -query ../scaffolds.fasta -db ~/5.juhua.genome.project/05.organelle.blast.db/asterids.o.fas -outfmt 6 -out out
+cat out | grep CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>100 && $6<200){print }}' | cut -f 1 -d " " > reads.cp
+cat out | grep -v CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>3 && $6<6){print }}' | cut -f 1 -d " " > reads.mt
+cat ../scaffolds.fasta | awk 'BEGIN{while(getline < "reads.cp"){b[$1]=0};while(getline < "reads.mt"){c[$1]=0}}{if(/^>/){m=gsub(">","",$1);m=$1}else{a[m]=a[m]$1}}END{for(k in b){print ">"k"\n"a[k]> "cp.fa"};for(h in c){print ">"h"\n"a[h]> "mt.fa"}}'
+cp cp.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/Megl_cp.fa
+cp mt.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/Megl_mt.fa
+
+#Melampodium sericeum
+spades.py -o spades1 --pe1-1 SRR6715645.sra_1.fastq.gz --pe1-2 SRR6715645.sra_2.fastq.gz --pe2-1 SRR6715646.sra_1.fastq.gz --pe2-2 SRR6715646.sra_2.fastq.gz -m 500 -t 20 -k 111
+cd spades1/
+mkdir blast
+cd blast
+blastn -query ../scaffolds.fasta -db ~/5.juhua.genome.project/05.organelle.blast.db/asterids.o.fas -outfmt 6 -out out
+cat out | grep CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>50 && $6<200){print }}' | cut -f 1 -d " " > reads.cp
+cat out | grep -v CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>7 && $6<10){print }}' | cut -f 1 -d " " > reads.mt
+cat ../scaffolds.fasta | awk 'BEGIN{while(getline < "reads.cp"){b[$1]=0};while(getline < "reads.mt"){c[$1]=0}}{if(/^>/){m=gsub(">","",$1);m=$1}else{a[m]=a[m]$1}}END{for(k in b){print ">"k"\n"a[k]> "cp.fa"};for(h in c){print ">"h"\n"a[h]> "mt.fa"}}'
+cp cp.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/Mese_cp.fa
+cp mt.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/Mese_mt.fa
+
+#Cynara cardunculus var. altilis
+spades.py -o spades1 --pe1-1 SRR1826176.sra_1.fastq.gz --pe1-2 SRR1826176.sra_2.fastq.gz -m 500 -t 20 -k 95
+cd spades1/
+mkdir blast
+cd blast
+blastn -query ../scaffolds.fasta -db ~/5.juhua.genome.project/05.organelle.blast.db/asterids.o.fas -outfmt 6 -out out
+cat out | grep CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>80 && $6<170){print }}' | cut -f 1 -d " " > reads.cp
+cat out | grep -v CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>10 && $6<35){print }}' | cut -f 1 -d " " > reads.mt
+cat ../scaffolds.fasta | awk 'BEGIN{while(getline < "reads.cp"){b[$1]=0};while(getline < "reads.mt"){c[$1]=0}}{if(/^>/){m=gsub(">","",$1);m=$1}else{a[m]=a[m]$1}}END{for(k in b){print ">"k"\n"a[k]> "cp.fa"};for(h in c){print ">"h"\n"a[h]> "mt.fa"}}'
+cp cp.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/CycaVARal_cp.fa
+cp mt.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/CycaVARal_mt.fa
+
+#Cynara cardunculus var. scolymus
+spades.py -o spades1 --pe1-1 SRR1914377.sra_1.fastq.gz --pe1-2 SRR1914377.sra_2.fastq.gz -m 500 -t 20 -k 93
+cd spades1/
+mkdir blast
+cd blast
+blastn -query ../scaffolds.fasta -db ~/5.juhua.genome.project/05.organelle.blast.db/asterids.o.fas -outfmt 6 -out out
+cat out | grep CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>200 && $6<300){print }}' | cut -f 1 -d " " > reads.cp
+cat out | grep -v CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>16 && $6<40){print }}' | cut -f 1 -d " " > reads.mt
+cat ../scaffolds.fasta | awk 'BEGIN{while(getline < "reads.cp"){b[$1]=0};while(getline < "reads.mt"){c[$1]=0}}{if(/^>/){m=gsub(">","",$1);m=$1}else{a[m]=a[m]$1}}END{for(k in b){print ">"k"\n"a[k]> "cp.fa"};for(h in c){print ">"h"\n"a[h]> "mt.fa"}}'
+cp cp.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/CycaVARsc_cp.fa
+cp mt.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/CycaVARsc_mt.fa
+
+#Phoebanthus tenuifolius
+spades.py -o spades1 --pe1-1 SRR3481352.sra_1.fastq.gz --pe1-2 SRR3481352.sra_2.fastq.gz -m 500 -t 20 -k 95
+cd spades1/
+mkdir blast
+cd blast
+blastn -query ../scaffolds.fasta -db ~/5.juhua.genome.project/05.organelle.blast.db/asterids.o.fas -outfmt 6 -out out
+cat out | grep CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>18 && $6<28){print }}' | cut -f 1 -d " " > reads.cp
+cat out | grep -v CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>0.5 && $6<2){print }}' | cut -f 1 -d " " > reads.mt
+cat ../scaffolds.fasta | awk 'BEGIN{while(getline < "reads.cp"){b[$1]=0};while(getline < "reads.mt"){c[$1]=0}}{if(/^>/){m=gsub(">","",$1);m=$1}else{a[m]=a[m]$1}}END{for(k in b){print ">"k"\n"a[k]> "cp.fa"};for(h in c){print ">"h"\n"a[h]> "mt.fa"}}'
+cp cp.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/Phte_cp.fa
+cp mt.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/Phte_mt.fa
+
+#Centaurea diffusa
+spades.py -o spades1 --pe1-1 SRR2729212.sra_1.fastq.gz --pe1-2 SRR2729212.sra_2.fastq.gz -m 500 -t 20 -k 93
+cd spades1/
+mkdir blast
+cd blast
+blastn -query ../scaffolds.fasta -db ~/5.juhua.genome.project/05.organelle.blast.db/asterids.o.fas -outfmt 6 -out out
+cat out | grep CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>180 && $6<270){print }}' | cut -f 1 -d " " > reads.cp
+cat out | grep -v CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>11 && $6<28){print }}' | cut -f 1 -d " " > reads.mt
+cat ../scaffolds.fasta | awk 'BEGIN{while(getline < "reads.cp"){b[$1]=0};while(getline < "reads.mt"){c[$1]=0}}{if(/^>/){m=gsub(">","",$1);m=$1}else{a[m]=a[m]$1}}END{for(k in b){print ">"k"\n"a[k]> "cp.fa"};for(h in c){print ">"h"\n"a[h]> "mt.fa"}}'
+cp cp.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/Cedi_cp.fa
+cp mt.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/Cedi_mt.fa
+
+#Parthenium argentatum
+spades.py -o spades1 --pe1-1 SRR5241418.sra_1.fastq.gz --pe1-2 SRR5241418.sra_2.fastq.gz -m 500 -t 20 -k 127
+cd spades1/
+mkdir blast
+cd blast
+blastn -query ../scaffolds.fasta -db ~/5.juhua.genome.project/05.organelle.blast.db/asterids.o.fas -outfmt 6 -out out
+cat out | grep CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>190 && $6<220){print }}' | cut -f 1 -d " " > reads.cp
+cat out | grep -v CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>8 && $6<17){print }}' | cut -f 1 -d " " > reads.mt
+cat ../scaffolds.fasta | awk 'BEGIN{while(getline < "reads.cp"){b[$1]=0};while(getline < "reads.mt"){c[$1]=0}}{if(/^>/){m=gsub(">","",$1);m=$1}else{a[m]=a[m]$1}}END{for(k in b){print ">"k"\n"a[k]> "cp.fa"};for(h in c){print ">"h"\n"a[h]> "mt.fa"}}'
+cp cp.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/Paar_cp.fa
+cp mt.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/Paar_mt.fa
+
+#Tolpis coronopifolia
+spades.py -o spades1 --pe1-1 SRR5870957.sra_1.fastq.gz --pe1-2 SRR5870957.sra_2.fastq.gz -m 500 -t 20 -k 127
+cd spades1/
+mkdir blast
+cd blast
+blastn -query ../scaffolds.fasta -db ~/5.juhua.genome.project/05.organelle.blast.db/asterids.o.fas -outfmt 6 -out out
+cat out | grep CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>300 && $6<500){print }}' | cut -f 1 -d " " > reads.cp
+cat out | grep -v CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>8 && $6<26){print }}' | cut -f 1 -d " " > reads.mt
+cat ../scaffolds.fasta | awk 'BEGIN{while(getline < "reads.cp"){b[$1]=0};while(getline < "reads.mt"){c[$1]=0}}{if(/^>/){m=gsub(">","",$1);m=$1}else{a[m]=a[m]$1}}END{for(k in b){print ">"k"\n"a[k]> "cp.fa"};for(h in c){print ">"h"\n"a[h]> "mt.fa"}}'
+cp cp.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/Toco_cp.fa
+cp mt.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/Toco_mt.fa
+
+#Pityopsis falcata
+spades.py -o spades1 --pe1-1 SRR4457832.sra_1.fastq.gz --pe1-2 SRR4457832.sra_2.fastq.gz -m 500 -t 20 -k 127
+cd spades1/
+mkdir blast
+cd blast
+blastn -query ../scaffolds.fasta -db ~/5.juhua.genome.project/05.organelle.blast.db/asterids.o.fas -outfmt 6 -out out
+cat out | grep CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>180 && $6<400){print }}' | cut -f 1 -d " " > reads.cp
+cat out | grep -v CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>25 && $6<80){print }}' | cut -f 1 -d " " > reads.mt
+cat ../scaffolds.fasta | awk 'BEGIN{while(getline < "reads.cp"){b[$1]=0};while(getline < "reads.mt"){c[$1]=0}}{if(/^>/){m=gsub(">","",$1);m=$1}else{a[m]=a[m]$1}}END{for(k in b){print ">"k"\n"a[k]> "cp.fa"};for(h in c){print ">"h"\n"a[h]> "mt.fa"}}'
+cp cp.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/Pifa_cp.fa
+cp mt.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/Pifa_mt.fa
+
+#Pityopsis aspera var. aspera
+spades.py -o spades1 --pe1-1 SRR4457830.sra_1.fastq.gz --pe1-2 SRR4457830.sra_2.fastq.gz -m 500 -t 20 -k 127
+cd spades1/
+mkdir blast
+cd blast
+blastn -query ../scaffolds.fasta -db ~/5.juhua.genome.project/05.organelle.blast.db/asterids.o.fas -outfmt 6 -out out
+cat out | grep CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>250 && $6<650){print }}' | cut -f 1 -d " " > reads.cp
+cat out | grep -v CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>60 && $6<90){print }}' | cut -f 1 -d " " > reads.mt
+cat ../scaffolds.fasta | awk 'BEGIN{while(getline < "reads.cp"){b[$1]=0};while(getline < "reads.mt"){c[$1]=0}}{if(/^>/){m=gsub(">","",$1);m=$1}else{a[m]=a[m]$1}}END{for(k in b){print ">"k"\n"a[k]> "cp.fa"};for(h in c){print ">"h"\n"a[h]> "mt.fa"}}'
+cp cp.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/PiasVARas_cp.fa
+cp mt.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/PiasVARas_mt.fa
+
+#Helianthus heterophyllus
+spades.py -o spades1 --pe1-1 SRR3492259.sra_1.fastq.gz --pe1-2 SRR3492259.sra_2.fastq.gz -m 500 -t 20 -k 91
+cd spades1/
+mkdir blast
+cd blast
+blastn -query ../scaffolds.fasta -db ~/5.juhua.genome.project/05.organelle.blast.db/asterids.o.fas -outfmt 6 -out out
+cat out | grep CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>30 && $6<65){print }}' | cut -f 1 -d " " > reads.cp
+cat out | grep -v CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>4 && $6<11){print }}' | cut -f 1 -d " " > reads.mt
+cat ../scaffolds.fasta | awk 'BEGIN{while(getline < "reads.cp"){b[$1]=0};while(getline < "reads.mt"){c[$1]=0}}{if(/^>/){m=gsub(">","",$1);m=$1}else{a[m]=a[m]$1}}END{for(k in b){print ">"k"\n"a[k]> "cp.fa"};for(h in c){print ">"h"\n"a[h]> "mt.fa"}}'
+cp cp.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/Hehe_cp.fa
+cp mt.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/Hehe_mt.fa
+
+#Helianthus carnosus
+spades.py -o spades1 --pe1-1 SRR6291193.sra_1.fastq.gz --pe1-2 SRR6291193.sra_2.fastq.gz --pe2-1 sra_SRR6291196.sra_1.fastq.gz --pe2-2 sra_SRR6291196.sra_2.fastq.gz --pe3-1 SRR6291197.sra_1.fastq.gz --pe3-2 SRR6291197.sra_2.fastq.gz -m 500 -t 20 -k 91
+cd spades1/
+mkdir blast
+cd blast
+blastn -query ../scaffolds.fasta -db ~/5.juhua.genome.project/05.organelle.blast.db/asterids.o.fas -outfmt 6 -out out
+cat out | grep CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>40 && $6<70){print }}' | cut -f 1 -d " " > reads.cp
+cat out | grep -v CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>9 && $6<21){print }}' | cut -f 1 -d " " > reads.mt
+cat ../scaffolds.fasta | awk 'BEGIN{while(getline < "reads.cp"){b[$1]=0};while(getline < "reads.mt"){c[$1]=0}}{if(/^>/){m=gsub(">","",$1);m=$1}else{a[m]=a[m]$1}}END{for(k in b){print ">"k"\n"a[k]> "cp.fa"};for(h in c){print ">"h"\n"a[h]> "mt.fa"}}'
+cp cp.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/Heca_cp.fa
+cp mt.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/Heca_mt.fa
+
+#Helianthus praecox
+spades.py -o spades1 --pe1-1 SRR5907751.sra_1.fastq.gz --pe1-2 SRR5907751.sra_2.fastq.gz --pe2-1 sra_SRR5907753.sra_1.fastq.gz --pe2-2  sra_SRR5907753.sra_2.fastq.gz -m 500 -t 20 -k 91
+cd spades1/
+mkdir blast
+cd blast
+blastn -query ../scaffolds.fasta -db ~/5.juhua.genome.project/05.organelle.blast.db/asterids.o.fas -outfmt 6 -out out
+cat out | grep CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>80 && $6<180){print }}' | cut -f 1 -d " " > reads.cp
+cat out | grep -v CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>2 && $6<6){print }}' | cut -f 1 -d " " > reads.mt
+cat ../scaffolds.fasta | awk 'BEGIN{while(getline < "reads.cp"){b[$1]=0};while(getline < "reads.mt"){c[$1]=0}}{if(/^>/){m=gsub(">","",$1);m=$1}else{a[m]=a[m]$1}}END{for(k in b){print ">"k"\n"a[k]> "cp.fa"};for(h in c){print ">"h"\n"a[h]> "mt.fa"}}'
+cp cp.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/Hepr_cp.fa
+cp mt.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/Hepr_mt.fa
+
+#Erigeron breviscapus
+spades.py -o spades1 --pe1-1 SRR5006972.sra_1.fastq.gz --pe1-2 SRR5006972.sra_2.fastq.gz -m 500 -t 20 -k 73
+cd spades1/
+mkdir blast
+cd blast
+blastn -query ../scaffolds.fasta -db ~/5.juhua.genome.project/05.organelle.blast.db/asterids.o.fas -outfmt 6 -out out
+cat out | grep CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>55 && $6<110){print }}' | cut -f 1 -d " " > reads.cp
+cat out | grep -v CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>20 && $6<30){print }}' | cut -f 1 -d " " > reads.mt
+cat ../scaffolds.fasta | awk 'BEGIN{while(getline < "reads.cp"){b[$1]=0};while(getline < "reads.mt"){c[$1]=0}}{if(/^>/){m=gsub(">","",$1);m=$1}else{a[m]=a[m]$1}}END{for(k in b){print ">"k"\n"a[k]> "cp.fa"};for(h in c){print ">"h"\n"a[h]> "mt.fa"}}'
+cp cp.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/Erbr_cp.fa
+cp mt.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/Erbr_mt.fa
+
+#Cichorium endivia
+spades.py -o spades1 --pe1-1 SRR2513248.sra_1.fastq.gz --pe1-2 SRR2513248.sra_2.fastq.gz -m 500 -t 20 -k 95
+mv spades1/scaffolds.fasta spades1/scaffolds.k95.fasta
+spades.py -o spades1 -m 500 -t 20 -k 97 --restart-from k97
+mv spades1/scaffolds.fasta spades1/scaffolds.k97.fasta
+cd spades1/
+mkdir blast
+cd blast
+blastn -query ../scaffolds.k95.fasta -db ~/5.juhua.genome.project/05.organelle.blast.db/asterids.o.fas -outfmt 6 -out out.k95
+blastn -query ../scaffolds.k97.fasta -db ~/5.juhua.genome.project/05.organelle.blast.db/asterids.o.fas -outfmt 6 -out out.k97
+cat out.k97 | grep CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>1000 && $6<1200){print }}' | cut -f 1 -d " " > reads.cp
+cat out.k95 | grep -v CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>25 && $6<40){print }}' | cut -f 1 -d " " > reads.mt
+cat ../scaffolds.k95.fasta | awk 'BEGIN{while(getline < "reads.cp"){b[$1]=0};while(getline < "reads.mt"){c[$1]=0}}{if(/^>/){m=gsub(">","",$1);m=$1}else{a[m]=a[m]$1}}END{for(k in b){};for(h in c){print ">"h"\n"a[h]> "mt.fa"}}'
+cat ../scaffolds.k97.fasta | awk 'BEGIN{while(getline < "reads.cp"){b[$1]=0};while(getline < "reads.mt"){c[$1]=0}}{if(/^>/){m=gsub(">","",$1);m=$1}else{a[m]=a[m]$1}}END{for(k in b){print ">"k"\n"a[k]> "cp.fa"};for(h in c){ }}'
+cp cp.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/Cien_cp.fa
+cp mt.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/Cien_mt.fa
+
+#Cichorium intybus
+spades.py -o spades1 --pe1-1 SRR2518216.sra_1.fastq.gz --pe1-2 SRR2518216.sra_2.fastq.gz -m 500 -t 20 -k 95
+cd spades1/
+mkdir blast
+cd blast
+blastn -query ../scaffolds.fasta -db ~/5.juhua.genome.project/05.organelle.blast.db/asterids.o.fas -outfmt 6 -out out
+cat out | grep CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>300 && $6<800){print }}' | cut -f 1 -d " " > reads.cp
+cat out | grep -v CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>15 && $6<30){print }}' | cut -f 1 -d " " > reads.mt
+cat ../scaffolds.fasta | awk 'BEGIN{while(getline < "reads.cp"){b[$1]=0};while(getline < "reads.mt"){c[$1]=0}}{if(/^>/){m=gsub(">","",$1);m=$1}else{a[m]=a[m]$1}}END{for(k in b){print ">"k"\n"a[k]> "cp.fa"};for(h in c){print ">"h"\n"a[h]> "mt.fa"}}'
+cp cp.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/Ciin_cp.fa
+cp mt.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/Ciin_mt.fa
+
+#Lactuca sativa x Lactuca serriola
+spades.py -o spades1 --pe1-1 SRR1232021.sra_1.fastq.gz --pe1-2 SRR1232021.sra_2.fastq.gz -m 500 -t 20 -k 95
+cd spades1/
+mkdir blast
+cd blast
+blastn -query ../scaffolds.fasta -db ~/5.juhua.genome.project/05.organelle.blast.db/asterids.o.fas -outfmt 6 -out out
+cat out | grep CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>30 && $6<45){print }}' | cut -f 1 -d " " > reads.cp
+cat out | grep -v CHRcp_151090_pilon | awk '{a[$1]+=$4}END{for(k in a){print k,a[k]}}' | sort -k 2 -n | awk -F '_| ' '{if($4>1000 && $6>2 && $6<8){print }}' | cut -f 1 -d " " > reads.mt
+cat ../scaffolds.fasta | awk 'BEGIN{while(getline < "reads.cp"){b[$1]=0};while(getline < "reads.mt"){c[$1]=0}}{if(/^>/){m=gsub(">","",$1);m=$1}else{a[m]=a[m]$1}}END{for(k in b){print ">"k"\n"a[k]> "cp.fa"};for(h in c){print ">"h"\n"a[h]> "mt.fa"}}'
+cp cp.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/LasaXser_cp.fa
+cp mt.fa /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades/LasaXser_mt.fa
+
+#Pilon
+cd /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/spades
+for n in *fa ; do echo ${n/.fa/}; cat $n | awk -v v1=${n/.fa/} '{if(/^>/){gsub("NODE",v1,$1)};{print $1}}' >> ../pilon/${n%_*}.fasta ; done
+cd /home/WangShuaibin/5.juhua.genome.project/00.1.download.data/pilon
+for n in `cat name | sed 's/\t/#/'` ; do bwa index ${n%#*}.fasta ; bwa mem -t 20 ${n%#*}.fasta ${n#*#}.sra_1.fastq.gz ${n#*#}.sra_2.fastq.gz | ~/software/samtools-1.9/bin/samtools view -bS -F 12 -q 20 -@ 20 - | ~/software/samtools-1.9/bin/samtools sort -@ 20 - > ${n%#*}.F12.q20.sort.bam ; done
+for n in *bam ; do ~/software/samtools-1.9/bin/samtools index $n & done
+for n in `cat name.2 | sed 's/\t/#/'` ; do pilon --genome ${n%#*}.fasta --frags ${n%#*}.F12.q20.sort.bam --fix snps,indels --gapmargin 1 --threads 10 --changes --outdir ${n%#*}.pilon ; done
+mkdir ../final
+for n in `find ./ -name pilon.fasta | cut -f 2 -d /` ; do cp ${n}/pilon.fasta ../final/${n}.fasta ; done

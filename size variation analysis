@@ -1,0 +1,146 @@
+#pan_genome analysis
+#get the specie pairs
+#28 Asteraceae species
+#make the species matrix not more than 500
+cat /dev/null > tmp
+rm pan*
+pool=(Cape_mt.fa Cati_mt.fa Cedi_mt.fa Cepa_mt.fa Cien_mt.fa Ciin_mt.fa Coco_mt.fa CycaVARal_mt.fa CycaVARsc_mt.fa Diha_mt.fa Erbr_mt.fa GehyCUL_mt.fa Hean_mt.fa Heca_mt.fa Hehe_mt.fa Hepr_mt.fa LasaXser_mt.fa Meam_mt.fa Megl_mt.fa Meli_mt.fa Mese_mt.fa Paar_mt.fa Phte_mt.fa PiasVARas_mt.fa Pifa_mt.fa Sevu_mt.fa Stre_mt.fa Toco_mt.fa)
+num=${#pool[*]}
+cp tmp pan_genome.2  ; for n in `seq 1 1000`; do cp tmp pan2 ; n=`cat pan2  | sort | uniq | wc -l` ; while (( $n < 2  )); do result=${pool[$((RANDOM%num))]} ; echo $result >> pan2  ; n=`cat pan2  | sort | uniq | wc -l`; done ; cat pan2  | sort | uniq | tr "\n" " " | sed 's/$/\n/' >> pan_genome.2  ; done &
+cp tmp pan_genome.3  ; for n in `seq 1 1000`; do cp tmp pan3 ; n=`cat pan3  | sort | uniq | wc -l` ; while (( $n < 3  )); do result=${pool[$((RANDOM%num))]} ; echo $result >> pan3  ; n=`cat pan3  | sort | uniq | wc -l`; done ; cat pan3  | sort | uniq | tr "\n" " " | sed 's/$/\n/' >> pan_genome.3  ; done &
+cp tmp pan_genome.4  ; for n in `seq 1 1000`; do cp tmp pan4 ; n=`cat pan4  | sort | uniq | wc -l` ; while (( $n < 4  )); do result=${pool[$((RANDOM%num))]} ; echo $result >> pan4  ; n=`cat pan4  | sort | uniq | wc -l`; done ; cat pan4  | sort | uniq | tr "\n" " " | sed 's/$/\n/' >> pan_genome.4  ; done &
+cp tmp pan_genome.5  ; for n in `seq 1 1000`; do cp tmp pan5 ; n=`cat pan5  | sort | uniq | wc -l` ; while (( $n < 5  )); do result=${pool[$((RANDOM%num))]} ; echo $result >> pan5  ; n=`cat pan5  | sort | uniq | wc -l`; done ; cat pan5  | sort | uniq | tr "\n" " " | sed 's/$/\n/' >> pan_genome.5  ; done &
+cp tmp pan_genome.6  ; for n in `seq 1 1000`; do cp tmp pan6 ; n=`cat pan6  | sort | uniq | wc -l` ; while (( $n < 6  )); do result=${pool[$((RANDOM%num))]} ; echo $result >> pan6  ; n=`cat pan6  | sort | uniq | wc -l`; done ; cat pan6  | sort | uniq | tr "\n" " " | sed 's/$/\n/' >> pan_genome.6  ; done &
+cp tmp pan_genome.7  ; for n in `seq 1 1000`; do cp tmp pan7 ; n=`cat pan7  | sort | uniq | wc -l` ; while (( $n < 7  )); do result=${pool[$((RANDOM%num))]} ; echo $result >> pan7  ; n=`cat pan7  | sort | uniq | wc -l`; done ; cat pan7  | sort | uniq | tr "\n" " " | sed 's/$/\n/' >> pan_genome.7  ; done &
+cp tmp pan_genome.8  ; for n in `seq 1 1000`; do cp tmp pan8 ; n=`cat pan8  | sort | uniq | wc -l` ; while (( $n < 8  )); do result=${pool[$((RANDOM%num))]} ; echo $result >> pan8  ; n=`cat pan8  | sort | uniq | wc -l`; done ; cat pan8  | sort | uniq | tr "\n" " " | sed 's/$/\n/' >> pan_genome.8  ; done &
+cp tmp pan_genome.9  ; for n in `seq 1 1000`; do cp tmp pan9 ; n=`cat pan9  | sort | uniq | wc -l` ; while (( $n < 9  )); do result=${pool[$((RANDOM%num))]} ; echo $result >> pan9  ; n=`cat pan9  | sort | uniq | wc -l`; done ; cat pan9  | sort | uniq | tr "\n" " " | sed 's/$/\n/' >> pan_genome.9  ; done &
+cp tmp pan_genome.10 ; for n in `seq 1 1000`; do cp tmp pan10; n=`cat pan10 | sort | uniq | wc -l` ; while (( $n < 10 )); do result=${pool[$((RANDOM%num))]} ; echo $result >> pan10 ; n=`cat pan10 | sort | uniq | wc -l`; done ; cat pan10 | sort | uniq | tr "\n" " " | sed 's/$/\n/' >> pan_genome.10 ; done &
+cp tmp pan_genome.11 ; for n in `seq 1 1000`; do cp tmp pan11; n=`cat pan11 | sort | uniq | wc -l` ; while (( $n < 11 )); do result=${pool[$((RANDOM%num))]} ; echo $result >> pan11 ; n=`cat pan11 | sort | uniq | wc -l`; done ; cat pan11 | sort | uniq | tr "\n" " " | sed 's/$/\n/' >> pan_genome.11 ; done &
+cp tmp pan_genome.12 ; for n in `seq 1 1000`; do cp tmp pan12; n=`cat pan12 | sort | uniq | wc -l` ; while (( $n < 12 )); do result=${pool[$((RANDOM%num))]} ; echo $result >> pan12 ; n=`cat pan12 | sort | uniq | wc -l`; done ; cat pan12 | sort | uniq | tr "\n" " " | sed 's/$/\n/' >> pan_genome.12 ; done &
+cp tmp pan_genome.13 ; for n in `seq 1 1000`; do cp tmp pan13; n=`cat pan13 | sort | uniq | wc -l` ; while (( $n < 13 )); do result=${pool[$((RANDOM%num))]} ; echo $result >> pan13 ; n=`cat pan13 | sort | uniq | wc -l`; done ; cat pan13 | sort | uniq | tr "\n" " " | sed 's/$/\n/' >> pan_genome.13 ; done &
+cp tmp pan_genome.14 ; for n in `seq 1 1000`; do cp tmp pan14; n=`cat pan14 | sort | uniq | wc -l` ; while (( $n < 14 )); do result=${pool[$((RANDOM%num))]} ; echo $result >> pan14 ; n=`cat pan14 | sort | uniq | wc -l`; done ; cat pan14 | sort | uniq | tr "\n" " " | sed 's/$/\n/' >> pan_genome.14 ; done &
+cp tmp pan_genome.15 ; for n in `seq 1 1000`; do cp tmp pan15; n=`cat pan15 | sort | uniq | wc -l` ; while (( $n < 15 )); do result=${pool[$((RANDOM%num))]} ; echo $result >> pan15 ; n=`cat pan15 | sort | uniq | wc -l`; done ; cat pan15 | sort | uniq | tr "\n" " " | sed 's/$/\n/' >> pan_genome.15 ; done &
+cp tmp pan_genome.16 ; for n in `seq 1 1000`; do cp tmp pan16; n=`cat pan16 | sort | uniq | wc -l` ; while (( $n < 16 )); do result=${pool[$((RANDOM%num))]} ; echo $result >> pan16 ; n=`cat pan16 | sort | uniq | wc -l`; done ; cat pan16 | sort | uniq | tr "\n" " " | sed 's/$/\n/' >> pan_genome.16 ; done &
+cp tmp pan_genome.17 ; for n in `seq 1 1000`; do cp tmp pan17; n=`cat pan17 | sort | uniq | wc -l` ; while (( $n < 17 )); do result=${pool[$((RANDOM%num))]} ; echo $result >> pan17 ; n=`cat pan17 | sort | uniq | wc -l`; done ; cat pan17 | sort | uniq | tr "\n" " " | sed 's/$/\n/' >> pan_genome.17 ; done &
+cp tmp pan_genome.18 ; for n in `seq 1 1000`; do cp tmp pan18; n=`cat pan18 | sort | uniq | wc -l` ; while (( $n < 18 )); do result=${pool[$((RANDOM%num))]} ; echo $result >> pan18 ; n=`cat pan18 | sort | uniq | wc -l`; done ; cat pan18 | sort | uniq | tr "\n" " " | sed 's/$/\n/' >> pan_genome.18 ; done &
+cp tmp pan_genome.19 ; for n in `seq 1 1000`; do cp tmp pan19; n=`cat pan19 | sort | uniq | wc -l` ; while (( $n < 19 )); do result=${pool[$((RANDOM%num))]} ; echo $result >> pan19 ; n=`cat pan19 | sort | uniq | wc -l`; done ; cat pan19 | sort | uniq | tr "\n" " " | sed 's/$/\n/' >> pan_genome.19 ; done &
+cp tmp pan_genome.20 ; for n in `seq 1 1000`; do cp tmp pan20; n=`cat pan20 | sort | uniq | wc -l` ; while (( $n < 20 )); do result=${pool[$((RANDOM%num))]} ; echo $result >> pan20 ; n=`cat pan20 | sort | uniq | wc -l`; done ; cat pan20 | sort | uniq | tr "\n" " " | sed 's/$/\n/' >> pan_genome.20 ; done &
+cp tmp pan_genome.21 ; for n in `seq 1 1000`; do cp tmp pan21; n=`cat pan21 | sort | uniq | wc -l` ; while (( $n < 21 )); do result=${pool[$((RANDOM%num))]} ; echo $result >> pan21 ; n=`cat pan21 | sort | uniq | wc -l`; done ; cat pan21 | sort | uniq | tr "\n" " " | sed 's/$/\n/' >> pan_genome.21 ; done &
+cp tmp pan_genome.22 ; for n in `seq 1 1000`; do cp tmp pan22; n=`cat pan22 | sort | uniq | wc -l` ; while (( $n < 22 )); do result=${pool[$((RANDOM%num))]} ; echo $result >> pan22 ; n=`cat pan22 | sort | uniq | wc -l`; done ; cat pan22 | sort | uniq | tr "\n" " " | sed 's/$/\n/' >> pan_genome.22 ; done &
+cp tmp pan_genome.23 ; for n in `seq 1 1000`; do cp tmp pan23; n=`cat pan23 | sort | uniq | wc -l` ; while (( $n < 23 )); do result=${pool[$((RANDOM%num))]} ; echo $result >> pan23 ; n=`cat pan23 | sort | uniq | wc -l`; done ; cat pan23 | sort | uniq | tr "\n" " " | sed 's/$/\n/' >> pan_genome.23 ; done &
+cp tmp pan_genome.24 ; for n in `seq 1 1000`; do cp tmp pan24; n=`cat pan24 | sort | uniq | wc -l` ; while (( $n < 24 )); do result=${pool[$((RANDOM%num))]} ; echo $result >> pan24 ; n=`cat pan24 | sort | uniq | wc -l`; done ; cat pan24 | sort | uniq | tr "\n" " " | sed 's/$/\n/' >> pan_genome.24 ; done & 
+cp tmp pan_genome.25 ; for n in `seq 1 1000`; do cp tmp pan25; n=`cat pan25 | sort | uniq | wc -l` ; while (( $n < 25 )); do result=${pool[$((RANDOM%num))]} ; echo $result >> pan25 ; n=`cat pan25 | sort | uniq | wc -l`; done ; cat pan25 | sort | uniq | tr "\n" " " | sed 's/$/\n/' >> pan_genome.25 ; done &
+cp tmp pan_genome.26 ; for n in `seq 1 1000`; do cp tmp pan26; n=`cat pan26 | sort | uniq | wc -l` ; while (( $n < 26 )); do result=${pool[$((RANDOM%num))]} ; echo $result >> pan26 ; n=`cat pan26 | sort | uniq | wc -l`; done ; cat pan26 | sort | uniq | tr "\n" " " | sed 's/$/\n/' >> pan_genome.26 ; done &
+cp tmp pan_genome.27 ; for n in `seq 1 1000`; do cp tmp pan27; n=`cat pan27 | sort | uniq | wc -l` ; while (( $n < 27 )); do result=${pool[$((RANDOM%num))]} ; echo $result >> pan27 ; n=`cat pan27 | sort | uniq | wc -l`; done ; cat pan27 | sort | uniq | tr "\n" " " | sed 's/$/\n/' >> pan_genome.27 ; done &
+echo Cape_mt.fa Cati_mt.fa Cedi_mt.fa Cepa_mt.fa Cien_mt.fa Ciin_mt.fa Coco_mt.fa CycaVARal_mt.fa CycaVARsc_mt.fa Diha_mt.fa Erbr_mt.fa GehyCUL_mt.fa Hean_mt.fa Heca_mt.fa Hehe_mt.fa Hepr_mt.fa LasaXser_mt.fa Meam_mt.fa Megl_mt.fa Meli_mt.fa Mese_mt.fa Paar_mt.fa Phte_mt.fa PiasVARas_mt.fa Pifa_mt.fa Sevu_mt.fa Stre_mt.fa Toco_mt.fa > pan_genome.28
+wait
+for n in `seq 1 27` ; do mv pan${n} pan ; done ; rm pan
+for n in pan_genome* ; do cat $n | sort | uniq | head -500 > TMP ; mv TMP $n ; done
+
+#make mugsy analysis script
+cat pan_genome.2  | awk -v p=$PWD '{print "mugsy -p mugsy_2_"NR" --directory "p"/mugsy_2_"NR, $0}'  >> 2.sh
+cat pan_genome.3  | awk -v p=$PWD '{print "mugsy -p mugsy_3_"NR" --directory "p"/mugsy_3_"NR, $0}'  >> 2.sh
+cat pan_genome.4  | awk -v p=$PWD '{print "mugsy -p mugsy_4_"NR" --directory "p"/mugsy_4_"NR, $0}'  >> 2.sh
+cat pan_genome.5  | awk -v p=$PWD '{print "mugsy -p mugsy_5_"NR" --directory "p"/mugsy_5_"NR, $0}'  >> 2.sh
+cat pan_genome.6  | awk -v p=$PWD '{print "mugsy -p mugsy_6_"NR" --directory "p"/mugsy_6_"NR, $0}'  >> 2.sh
+cat pan_genome.7  | awk -v p=$PWD '{print "mugsy -p mugsy_7_"NR" --directory "p"/mugsy_7_"NR, $0}'  >> 2.sh
+cat pan_genome.8  | awk -v p=$PWD '{print "mugsy -p mugsy_8_"NR" --directory "p"/mugsy_8_"NR, $0}'  >> 2.sh
+cat pan_genome.9  | awk -v p=$PWD '{print "mugsy -p mugsy_9_"NR" --directory "p"/mugsy_9_"NR, $0}'  >> 2.sh
+cat pan_genome.10 | awk -v p=$PWD '{print "mugsy -p mugsy_10_"NR" --directory "p"/mugsy_10_"NR, $0}' >> 2.sh
+cat pan_genome.11 | awk -v p=$PWD '{print "mugsy -p mugsy_11_"NR" --directory "p"/mugsy_11_"NR, $0}' >> 2.sh
+cat pan_genome.12 | awk -v p=$PWD '{print "mugsy -p mugsy_12_"NR" --directory "p"/mugsy_12_"NR, $0}' >> 2.sh
+cat pan_genome.13 | awk -v p=$PWD '{print "mugsy -p mugsy_13_"NR" --directory "p"/mugsy_13_"NR, $0}' >> 2.sh
+cat pan_genome.14 | awk -v p=$PWD '{print "mugsy -p mugsy_14_"NR" --directory "p"/mugsy_14_"NR, $0}' >> 2.sh
+cat pan_genome.15 | awk -v p=$PWD '{print "mugsy -p mugsy_15_"NR" --directory "p"/mugsy_15_"NR, $0}' >> 2.sh
+cat pan_genome.16 | awk -v p=$PWD '{print "mugsy -p mugsy_16_"NR" --directory "p"/mugsy_16_"NR, $0}' >> 2.sh
+cat pan_genome.17 | awk -v p=$PWD '{print "mugsy -p mugsy_17_"NR" --directory "p"/mugsy_17_"NR, $0}' >> 2.sh
+cat pan_genome.18 | awk -v p=$PWD '{print "mugsy -p mugsy_18_"NR" --directory "p"/mugsy_18_"NR, $0}' >> 2.sh
+cat pan_genome.19 | awk -v p=$PWD '{print "mugsy -p mugsy_19_"NR" --directory "p"/mugsy_19_"NR, $0}' >> 2.sh
+cat pan_genome.20 | awk -v p=$PWD '{print "mugsy -p mugsy_20_"NR" --directory "p"/mugsy_20_"NR, $0}' >> 2.sh
+cat pan_genome.21 | awk -v p=$PWD '{print "mugsy -p mugsy_21_"NR" --directory "p"/mugsy_21_"NR, $0}' >> 2.sh
+cat pan_genome.22 | awk -v p=$PWD '{print "mugsy -p mugsy_22_"NR" --directory "p"/mugsy_22_"NR, $0}' >> 2.sh
+cat pan_genome.23 | awk -v p=$PWD '{print "mugsy -p mugsy_23_"NR" --directory "p"/mugsy_23_"NR, $0}' >> 2.sh
+cat pan_genome.24 | awk -v p=$PWD '{print "mugsy -p mugsy_24_"NR" --directory "p"/mugsy_24_"NR, $0}' >> 2.sh
+cat pan_genome.25 | awk -v p=$PWD '{print "mugsy -p mugsy_25_"NR" --directory "p"/mugsy_25_"NR, $0}' >> 2.sh
+cat pan_genome.26 | awk -v p=$PWD '{print "mugsy -p mugsy_26_"NR" --directory "p"/mugsy_26_"NR, $0}' >> 2.sh
+cat pan_genome.27 | awk -v p=$PWD '{print "mugsy -p mugsy_27_"NR" --directory "p"/mugsy_27_"NR, $0}' >> 2.sh
+cat pan_genome.28 | awk -v p=$PWD '{print "mugsy -p mugsy_28_"NR" --directory "p"/mugsy_28_"NR, $0}' >> 2.sh
+#make work directory
+cat 2.sh | cut -f 3 -d " " > name
+while read n; do joblist=($(jobs -p)) ;  while (( ${#joblist[*]} >= 1000 )); do sleep 0.1 ; joblist=($(jobs -p)) ; done ; mkdir $n & done <name
+wait
+# run using 64 threads; It will take a long time
+while read cmd ; do joblist=($(jobs -p)) ;  while (( ${#joblist[*]} >= 64 )); do sleep 2 ; joblist=($(jobs -p)) ; done ; $cmd & done <2.sh
+wait
+
+#core_genome size 
+rm core.size*out
+for n in Cape_mt.fa Cati_mt.fa Cedi_mt.fa Cepa_mt.fa Cien_mt.fa Ciin_mt.fa Coco_mt.fa CycaVARal_mt.fa CycaVARsc_mt.fa Diha_mt.fa Erbr_mt.fa GehyCUL_mt.fa Hean_mt.fa Heca_mt.fa Hehe_mt.fa Hepr_mt.fa LasaXser_mt.fa Meam_mt.fa Megl_mt.fa Meli_mt.fa Mese_mt.fa Paar_mt.fa Phte_mt.fa PiasVARas_mt.fa Pifa_mt.fa Sevu_mt.fa Stre_mt.fa Toco_mt.fa ; do cat $n | sed '/^>/d' | awk '{m+=length($1)}END{print m}' ; done > core.size.1.out 
+for n in `ls mugsy_2_*/*_2_*maf   ` ; do cat $n | cut -f 1-5 -d " " |  grep mult=2$ -A 2  |grep ^s | awk '{m+=$4}END{print m/2 }' >> core.size.2.out  ; done &
+for n in `ls mugsy_3_*/*_3_*maf   ` ; do cat $n | cut -f 1-5 -d " " |  grep mult=3$ -A 3  |grep ^s | awk '{m+=$4}END{print m/3 }' >> core.size.3.out  ; done &
+for n in `ls mugsy_4_*/*_4_*maf   ` ; do cat $n | cut -f 1-5 -d " " |  grep mult=4$ -A 4  |grep ^s | awk '{m+=$4}END{print m/4 }' >> core.size.4.out  ; done &
+for n in `ls mugsy_5_*/*_5_*maf   ` ; do cat $n | cut -f 1-5 -d " " |  grep mult=5$ -A 5  |grep ^s | awk '{m+=$4}END{print m/5 }' >> core.size.5.out  ; done &
+for n in `ls mugsy_6_*/*_6_*maf   ` ; do cat $n | cut -f 1-5 -d " " |  grep mult=6$ -A 6  |grep ^s | awk '{m+=$4}END{print m/6 }' >> core.size.6.out  ; done &
+for n in `ls mugsy_7_*/*_7_*maf   ` ; do cat $n | cut -f 1-5 -d " " |  grep mult=7$ -A 7  |grep ^s | awk '{m+=$4}END{print m/7 }' >> core.size.7.out  ; done &
+for n in `ls mugsy_8_*/*_8_*maf   ` ; do cat $n | cut -f 1-5 -d " " |  grep mult=8$ -A 8  |grep ^s | awk '{m+=$4}END{print m/8 }' >> core.size.8.out  ; done &
+for n in `ls mugsy_9_*/*_9_*maf   ` ; do cat $n | cut -f 1-5 -d " " |  grep mult=9$ -A 9  |grep ^s | awk '{m+=$4}END{print m/9 }' >> core.size.9.out  ; done &
+for n in `ls mugsy_10_*/*_10_*maf ` ; do cat $n | cut -f 1-5 -d " " | grep mult=10$ -A 10 |grep ^s | awk '{m+=$4}END{print m/10}' >> core.size.10.out ; done &
+for n in `ls mugsy_11_*/*_11_*maf ` ; do cat $n | cut -f 1-5 -d " " | grep mult=11$ -A 11 |grep ^s | awk '{m+=$4}END{print m/11}' >> core.size.11.out ; done &
+for n in `ls mugsy_12_*/*_12_*maf ` ; do cat $n | cut -f 1-5 -d " " | grep mult=12$ -A 12 |grep ^s | awk '{m+=$4}END{print m/12}' >> core.size.12.out ; done &
+for n in `ls mugsy_13_*/*_13_*maf ` ; do cat $n | cut -f 1-5 -d " " | grep mult=13$ -A 13 |grep ^s | awk '{m+=$4}END{print m/13}' >> core.size.13.out ; done &
+for n in `ls mugsy_14_*/*_14_*maf ` ; do cat $n | cut -f 1-5 -d " " | grep mult=14$ -A 14 |grep ^s | awk '{m+=$4}END{print m/14}' >> core.size.14.out ; done &
+for n in `ls mugsy_15_*/*_15_*maf ` ; do cat $n | cut -f 1-5 -d " " | grep mult=15$ -A 15 |grep ^s | awk '{m+=$4}END{print m/15}' >> core.size.15.out ; done &
+for n in `ls mugsy_16_*/*_16_*maf ` ; do cat $n | cut -f 1-5 -d " " | grep mult=16$ -A 16 |grep ^s | awk '{m+=$4}END{print m/16}' >> core.size.16.out ; done &
+for n in `ls mugsy_17_*/*_17_*maf ` ; do cat $n | cut -f 1-5 -d " " | grep mult=17$ -A 17 |grep ^s | awk '{m+=$4}END{print m/17}' >> core.size.17.out ; done &
+for n in `ls mugsy_18_*/*_18_*maf ` ; do cat $n | cut -f 1-5 -d " " | grep mult=18$ -A 18 |grep ^s | awk '{m+=$4}END{print m/18}' >> core.size.18.out ; done &
+for n in `ls mugsy_19_*/*_19_*maf ` ; do cat $n | cut -f 1-5 -d " " | grep mult=19$ -A 19 |grep ^s | awk '{m+=$4}END{print m/19}' >> core.size.19.out ; done &
+for n in `ls mugsy_20_*/*_20_*maf ` ; do cat $n | cut -f 1-5 -d " " | grep mult=20$ -A 20 |grep ^s | awk '{m+=$4}END{print m/20}' >> core.size.20.out ; done &
+for n in `ls mugsy_21_*/*_21_*maf ` ; do cat $n | cut -f 1-5 -d " " | grep mult=21$ -A 21 |grep ^s | awk '{m+=$4}END{print m/21}' >> core.size.21.out ; done &
+for n in `ls mugsy_22_*/*_22_*maf ` ; do cat $n | cut -f 1-5 -d " " | grep mult=22$ -A 22 |grep ^s | awk '{m+=$4}END{print m/22}' >> core.size.22.out ; done &
+for n in `ls mugsy_23_*/*_23_*maf ` ; do cat $n | cut -f 1-5 -d " " | grep mult=23$ -A 23 |grep ^s | awk '{m+=$4}END{print m/23}' >> core.size.23.out ; done &
+for n in `ls mugsy_24_*/*_24_*maf ` ; do cat $n | cut -f 1-5 -d " " | grep mult=24$ -A 24 |grep ^s | awk '{m+=$4}END{print m/24}' >> core.size.24.out ; done &
+for n in `ls mugsy_25_*/*_25_*maf ` ; do cat $n | cut -f 1-5 -d " " | grep mult=25$ -A 25 |grep ^s | awk '{m+=$4}END{print m/25}' >> core.size.25.out ; done &
+for n in `ls mugsy_26_*/*_26_*maf ` ; do cat $n | cut -f 1-5 -d " " | grep mult=26$ -A 26 |grep ^s | awk '{m+=$4}END{print m/26}' >> core.size.26.out ; done &
+for n in `ls mugsy_27_*/*_27_*maf ` ; do cat $n | cut -f 1-5 -d " " | grep mult=27$ -A 27 |grep ^s | awk '{m+=$4}END{print m/27}' >> core.size.27.out ; done &
+cat mugsy_28_1/mugsy_28_1.maf | cut -f 1-5 -d " " | grep mult=28$ -A 28 |grep ^s | awk '{m+=$4}END{print m/28}' >> core.size.28.out
+wait
+
+#pan_genome size
+rm pan.size*
+for n in Cape_mt.fa Cati_mt.fa Cedi_mt.fa Cepa_mt.fa Cien_mt.fa Ciin_mt.fa Coco_mt.fa CycaVARal_mt.fa CycaVARsc_mt.fa Erbr_mt.fa GehyCUL_mt.fa Hean_mt.fa Heca_mt.fa Hehe_mt.fa Hepr_mt.fa LasaXser_mt.fa Meam_mt.fa Megl_mt.fa Meli_mt.fa CHRmt.fa Mese_mt.fa Paar_mt.fa Phte_mt.fa PiasVARas_mt.fa Pifa_mt.fa Sevu_mt.fa Stre_mt.fa Toco_mt.fa ; do cat $n | sed '/^>/d' | awk '{m+=length($1)}END{print m}' ; done > pan.size.1.out
+cp tmp pan_genome2  ; for n in `ls mugsy_2_*/*_2_*maf `   ; do for m in `seq 1 28` ; do cat $n | grep mult=${m}$ -A 1 | grep ^s | awk '{print length($7)}' >> pan_genome2  ; done ; cat pan_genome2  | awk '{m+=$1}END{print m}' >> pan.size.2.out  ; cp tmp pan_genome2  ; done &
+cp tmp pan_genome3  ; for n in `ls mugsy_3_*/*_3_*maf `   ; do for m in `seq 1 28` ; do cat $n | grep mult=${m}$ -A 1 | grep ^s | awk '{print length($7)}' >> pan_genome3  ; done ; cat pan_genome3  | awk '{m+=$1}END{print m}' >> pan.size.3.out  ; cp tmp pan_genome3  ; done &
+cp tmp pan_genome4  ; for n in `ls mugsy_4_*/*_4_*maf `   ; do for m in `seq 1 28` ; do cat $n | grep mult=${m}$ -A 1 | grep ^s | awk '{print length($7)}' >> pan_genome4  ; done ; cat pan_genome4  | awk '{m+=$1}END{print m}' >> pan.size.4.out  ; cp tmp pan_genome4  ; done &
+cp tmp pan_genome5  ; for n in `ls mugsy_5_*/*_5_*maf `   ; do for m in `seq 1 28` ; do cat $n | grep mult=${m}$ -A 1 | grep ^s | awk '{print length($7)}' >> pan_genome5  ; done ; cat pan_genome5  | awk '{m+=$1}END{print m}' >> pan.size.5.out  ; cp tmp pan_genome5  ; done &
+cp tmp pan_genome6  ; for n in `ls mugsy_6_*/*_6_*maf `   ; do for m in `seq 1 28` ; do cat $n | grep mult=${m}$ -A 1 | grep ^s | awk '{print length($7)}' >> pan_genome6  ; done ; cat pan_genome6  | awk '{m+=$1}END{print m}' >> pan.size.6.out  ; cp tmp pan_genome6  ; done &
+cp tmp pan_genome7  ; for n in `ls mugsy_7_*/*_7_*maf `   ; do for m in `seq 1 28` ; do cat $n | grep mult=${m}$ -A 1 | grep ^s | awk '{print length($7)}' >> pan_genome7  ; done ; cat pan_genome7  | awk '{m+=$1}END{print m}' >> pan.size.7.out  ; cp tmp pan_genome7  ; done &
+cp tmp pan_genome8  ; for n in `ls mugsy_8_*/*_8_*maf `   ; do for m in `seq 1 28` ; do cat $n | grep mult=${m}$ -A 1 | grep ^s | awk '{print length($7)}' >> pan_genome8  ; done ; cat pan_genome8  | awk '{m+=$1}END{print m}' >> pan.size.8.out  ; cp tmp pan_genome8  ; done &
+cp tmp pan_genome9  ; for n in `ls mugsy_9_*/*_9_*maf `   ; do for m in `seq 1 28` ; do cat $n | grep mult=${m}$ -A 1 | grep ^s | awk '{print length($7)}' >> pan_genome9  ; done ; cat pan_genome9  | awk '{m+=$1}END{print m}' >> pan.size.9.out  ; cp tmp pan_genome9  ; done &
+cp tmp pan_genome10 ; for n in `ls mugsy_10_*/*_10_*maf ` ; do for m in `seq 1 28` ; do cat $n | grep mult=${m}$ -A 1 | grep ^s | awk '{print length($7)}' >> pan_genome10 ; done ; cat pan_genome10 | awk '{m+=$1}END{print m}' >> pan.size.10.out ; cp tmp pan_genome10 ; done &
+cp tmp pan_genome11 ; for n in `ls mugsy_11_*/*_11_*maf ` ; do for m in `seq 1 28` ; do cat $n | grep mult=${m}$ -A 1 | grep ^s | awk '{print length($7)}' >> pan_genome11 ; done ; cat pan_genome11 | awk '{m+=$1}END{print m}' >> pan.size.11.out ; cp tmp pan_genome11 ; done &
+cp tmp pan_genome12 ; for n in `ls mugsy_12_*/*_12_*maf ` ; do for m in `seq 1 28` ; do cat $n | grep mult=${m}$ -A 1 | grep ^s | awk '{print length($7)}' >> pan_genome12 ; done ; cat pan_genome12 | awk '{m+=$1}END{print m}' >> pan.size.12.out ; cp tmp pan_genome12 ; done &
+cp tmp pan_genome13 ; for n in `ls mugsy_13_*/*_13_*maf ` ; do for m in `seq 1 28` ; do cat $n | grep mult=${m}$ -A 1 | grep ^s | awk '{print length($7)}' >> pan_genome13 ; done ; cat pan_genome13 | awk '{m+=$1}END{print m}' >> pan.size.13.out ; cp tmp pan_genome13 ; done &
+cp tmp pan_genome14 ; for n in `ls mugsy_14_*/*_14_*maf ` ; do for m in `seq 1 28` ; do cat $n | grep mult=${m}$ -A 1 | grep ^s | awk '{print length($7)}' >> pan_genome14 ; done ; cat pan_genome14 | awk '{m+=$1}END{print m}' >> pan.size.14.out ; cp tmp pan_genome14 ; done &
+cp tmp pan_genome15 ; for n in `ls mugsy_15_*/*_15_*maf ` ; do for m in `seq 1 28` ; do cat $n | grep mult=${m}$ -A 1 | grep ^s | awk '{print length($7)}' >> pan_genome15 ; done ; cat pan_genome15 | awk '{m+=$1}END{print m}' >> pan.size.15.out ; cp tmp pan_genome15 ; done &
+cp tmp pan_genome16 ; for n in `ls mugsy_16_*/*_16_*maf ` ; do for m in `seq 1 28` ; do cat $n | grep mult=${m}$ -A 1 | grep ^s | awk '{print length($7)}' >> pan_genome16 ; done ; cat pan_genome16 | awk '{m+=$1}END{print m}' >> pan.size.16.out ; cp tmp pan_genome16 ; done &
+cp tmp pan_genome17 ; for n in `ls mugsy_17_*/*_17_*maf ` ; do for m in `seq 1 28` ; do cat $n | grep mult=${m}$ -A 1 | grep ^s | awk '{print length($7)}' >> pan_genome17 ; done ; cat pan_genome17 | awk '{m+=$1}END{print m}' >> pan.size.17.out ; cp tmp pan_genome17 ; done &
+cp tmp pan_genome18 ; for n in `ls mugsy_18_*/*_18_*maf ` ; do for m in `seq 1 28` ; do cat $n | grep mult=${m}$ -A 1 | grep ^s | awk '{print length($7)}' >> pan_genome18 ; done ; cat pan_genome18 | awk '{m+=$1}END{print m}' >> pan.size.18.out ; cp tmp pan_genome18 ; done &
+cp tmp pan_genome19 ; for n in `ls mugsy_19_*/*_19_*maf ` ; do for m in `seq 1 28` ; do cat $n | grep mult=${m}$ -A 1 | grep ^s | awk '{print length($7)}' >> pan_genome19 ; done ; cat pan_genome19 | awk '{m+=$1}END{print m}' >> pan.size.19.out ; cp tmp pan_genome19 ; done &
+cp tmp pan_genome20 ; for n in `ls mugsy_20_*/*_20_*maf ` ; do for m in `seq 1 28` ; do cat $n | grep mult=${m}$ -A 1 | grep ^s | awk '{print length($7)}' >> pan_genome20 ; done ; cat pan_genome20 | awk '{m+=$1}END{print m}' >> pan.size.20.out ; cp tmp pan_genome20 ; done &
+cp tmp pan_genome21 ; for n in `ls mugsy_21_*/*_21_*maf ` ; do for m in `seq 1 28` ; do cat $n | grep mult=${m}$ -A 1 | grep ^s | awk '{print length($7)}' >> pan_genome21 ; done ; cat pan_genome21 | awk '{m+=$1}END{print m}' >> pan.size.21.out ; cp tmp pan_genome21 ; done &
+cp tmp pan_genome22 ; for n in `ls mugsy_22_*/*_22_*maf ` ; do for m in `seq 1 28` ; do cat $n | grep mult=${m}$ -A 1 | grep ^s | awk '{print length($7)}' >> pan_genome22 ; done ; cat pan_genome22 | awk '{m+=$1}END{print m}' >> pan.size.22.out ; cp tmp pan_genome22 ; done &
+cp tmp pan_genome23 ; for n in `ls mugsy_23_*/*_23_*maf ` ; do for m in `seq 1 28` ; do cat $n | grep mult=${m}$ -A 1 | grep ^s | awk '{print length($7)}' >> pan_genome23 ; done ; cat pan_genome23 | awk '{m+=$1}END{print m}' >> pan.size.23.out ; cp tmp pan_genome23 ; done &
+cp tmp pan_genome24 ; for n in `ls mugsy_24_*/*_24_*maf ` ; do for m in `seq 1 28` ; do cat $n | grep mult=${m}$ -A 1 | grep ^s | awk '{print length($7)}' >> pan_genome24 ; done ; cat pan_genome24 | awk '{m+=$1}END{print m}' >> pan.size.24.out ; cp tmp pan_genome24 ; done &
+cp tmp pan_genome25 ; for n in `ls mugsy_25_*/*_25_*maf ` ; do for m in `seq 1 28` ; do cat $n | grep mult=${m}$ -A 1 | grep ^s | awk '{print length($7)}' >> pan_genome25 ; done ; cat pan_genome25 | awk '{m+=$1}END{print m}' >> pan.size.25.out ; cp tmp pan_genome25 ; done &
+cp tmp pan_genome26 ; for n in `ls mugsy_26_*/*_26_*maf ` ; do for m in `seq 1 28` ; do cat $n | grep mult=${m}$ -A 1 | grep ^s | awk '{print length($7)}' >> pan_genome26 ; done ; cat pan_genome26 | awk '{m+=$1}END{print m}' >> pan.size.26.out ; cp tmp pan_genome26 ; done &
+cp tmp pan_genome27 ; for n in `ls mugsy_27_*/*_27_*maf ` ; do for m in `seq 1 28` ; do cat $n | grep mult=${m}$ -A 1 | grep ^s | awk '{print length($7)}' >> pan_genome27 ; done ; cat pan_genome27 | awk '{m+=$1}END{print m}' >> pan.size.27.out ; cp tmp pan_genome27 ; done &
+cp tmp pan_genome28 ;			for m in `seq 1 28` ; do cat mugsy_28_1/mugsy_28_1.maf | grep mult=${m}$ -A 1 | grep ^s | awk '{print length($7)}' >> pan_genome28 ; done ; cat pan_genome28 | awk '{m+=$1}END{print m}' >> pan.size.28.out ; cp tmp pan_genome28 
+wait
+for n in `seq 2 28` ; do mv pan_genome${n} pan_genome28 ; done ; rm pan_genome28
+
+#merge
+rm total*size
+for n in `seq 1 28`; do cat core.size.${n}.out | awk -v m=$n '{print m,$1}' >> total.core.size ; done
+for n in `seq 1 28`; do cat pan.size.${n}.out  | awk -v m=$n '{print m,$1}' >> total.pan.size ; done
+paste total.core.size total.pan.size | awk '{if($1!=$3){print }}'
+paste total.pan.size total.core.size | awk 'BEGIN{OFS="\t";print "GenomeNum\tPan-Genome Size\tCore Genome Size"}{printf("%s\t%d\t%d\n",$1,$2,$4)}' > total.size.result
